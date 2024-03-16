@@ -1,0 +1,60 @@
+.card {
+    margin: 2% auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    height: 50vh;
+    width: 80vh;
+    transition: 150ms;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    z-index: 10;
+  }
+
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card.flip{
+    --rotate-y : 180deg;
+    transition: transform 150ms;
+}
+
+.card .front {
+    text-align: center;
+}
+
+.card .front , .card .back {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+}
+
+.card .back{
+    transform: rotateY(180deg);
+}
+
+.card.easy {
+    background-color: lightgreen;
+}
+
+.card.medium {
+    background-color: lightyellow;
+}
+
+.card.hard {
+    background-color: lightcoral;
+}
+
+.question-image {
+    width: 66%; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto;
+  }
